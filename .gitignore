@@ -24,3 +24,5 @@ yarn-error.log*
 /.idea/vcs.xml
 
 /.env
+/package-lock.json
+/.idea/watcherTasks.xml
