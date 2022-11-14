@@ -1,3 +1,7 @@
-@import "theme.scss";
+/*
+  * Use this file to import your partials/other css files.
+ */
+@import "./fonts/fonts.scss";
+@import "components";
+@import "theme";
 @import "general";
-@import "components/index";

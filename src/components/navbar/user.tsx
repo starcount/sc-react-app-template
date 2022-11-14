@@ -1,72 +1,45 @@
-import React, {useEffect, useState} from 'react';
-import {NavDropdown} from 'react-bootstrap';
-import Gravatar from 'react-gravatar';
+import React, {useRef, useState} from 'react';
+import {useAuth0} from "@auth0/auth0-react";
 
-interface UserProps {
-    authInstance: object;
-    domain?: string;
-    clientId?: string;
-    userManagementUrl: string;
-}
+import {useOnClickOutside} from "../../hooks/useOnClickOutside";
+import {UserIcon} from "../../assets/images/UserIcon";
 
-const Avatar = (email: string | undefined) => (
-    <div className="avatar-wrapper">
-        <Gravatar email={email} size={28} className="avatar-img"/>
-        <div className="hover-overlay"/>
-        <div className="icon-chevron-down"/>
-    </div>
-);
+export const User = () => {
+    const userMenuRef = useRef<HTMLDivElement>(null);
+    const [isOpen, setIsOpen] = useState(false);
+    const {user, logout} = useAuth0();
 
-export const User: React.FC<UserProps> = ({authInstance, domain, clientId, userManagementUrl}) => {
-    const [authenticated, setAuthenticated] = useState(null);
-    const [userInfo, setUserInfo] = useState(null);
-    const [auth, setAuth] = useState(authInstance);
+    useOnClickOutside(userMenuRef, () => {
+        setIsOpen(false);
+    });
 
-    useEffect(() => {
-        return () => {
-            checkAuthentication()
-        };
-    }, []);
-    
-    const checkAuthentication = async () => {
-        const authenticated = await auth.isAuthenticated();
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    }
 
-        if (authenticated) {
-            auth.getUserInfo((err, userInfo) => {
-                setUserInfo({userInfo, authenticated});
-            });
-        }
-    };
-
-    const logOut = () => {
-        auth.logout();
+    const handleLogout = () => {
+        logout({
+            returnTo: window.location.origin,
+        });
     };
 
     return (
-        <div>
-            {authenticated && (
-                <div className="avatar__placeholder"/>
-            )}
-            <div className="user-area">
-                <div className="user-widget">
-                    <div className="user-name">{userInfo.nickname}</div>
-                    <NavDropdown
-                        onToggle={onDropdownToggle}
-                        noCaret={true}
-                        id="nav-dropdown"
-                        pullRight={true}
-                        title={<Avatar email={userInfo?.name}/>}
-                    >
-                        <li>
-                            <a target="_new" href={userManagementUrl}>User Management</a>
-                        </li>
-
-                        <li onClick={logOut}>
-                            <a href="#">Logout</a>
-                        </li>
-                    </NavDropdown>
+        <div className="user-widget">
+            <div className="user-details-container" ref={userMenuRef}>
+                <div className="user-menu-toggle" onClick={toggleMenu}>
+                    <UserIcon/>
+                </div>
+                <div className="user-details">
+                    <div className="user-name">{user?.name}</div>
+                    <div className="user-email">{user?.email}</div>
                 </div>
             </div>
+
+            {isOpen && (
+                <div className="user-menu-container">
+                    <div className="menu-item" onClick={handleLogout}>Logout</div>
+                </div>
+            )}
         </div>
     );
 };

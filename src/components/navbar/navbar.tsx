@@ -1,41 +1,27 @@
 import React from 'react';
-
-import 'navbar.scss'
-import {Link} from "react-router-dom";
-import {User} from "./user";
+import {Logo} from "../../assets/images/Logo";
+import {User} from "../../components/navbar";
 
 interface NavbarProps {
-    displayAppName: boolean;
-    appName: string;
-    homeRoute: string;
-    authInstance: object;
-    userManagementUrl: string;
+    displayAppName?: boolean;
+    appName?: string;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
                                                   displayAppName = true,
-                                                  appName = 'No App Name Specified',
-                                                  homeRoute = '/',
-                                                  authInstance,
-                                                  userManagementUrl,
+                                                  appName
                                               }) => {
     return (
-        <div className="framework-header">
-            <div className="container">
-                <div className="breadcrumb-area">
-                    <Link to={'/'}>
-                        <i className="main icon-logo"/>
-                    </Link>
-                    {displayAppName && (
-                        <>
-                            <div className="header-divider"/>
-                            <Link to={homeRoute}>
-                                <div className="app-name">{appName}</div>
-                            </Link>
-                        </>
-                    )}
+        <div className="app-header">
+            <div className="app-header-content">
+                <div className="app-header-logo">
+                    <a href="/" className="logo">
+                        <Logo/>
+                    </a>
                 </div>
-                <User authInstance={authInstance} userManagementUrl={userManagementUrl}/>
+                <div className="app-header-menu">
+                    <User/>
+                </div>
             </div>
         </div>
     );
