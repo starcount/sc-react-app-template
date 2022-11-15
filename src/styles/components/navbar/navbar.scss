@@ -1,4 +1,4 @@
-.app-header {
+.navbar {
   $height: 60px;
   position: relative;
   flex: 0 0 auto;
@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
 
-  .app-header-content {
+  .navbar-content {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,7 +22,7 @@
     width: 100%;
 
 
-    .app-header-logo {
+    .navbar-logo {
       padding-left: 30px;
       justify-content: flex-start;
       width: 8 * (44 + 8);
@@ -39,7 +39,7 @@
       }
     }
 
-    .app-header-menu {
+    .navbar-menu {
       padding-right: 30px;
     }
 

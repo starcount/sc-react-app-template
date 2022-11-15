@@ -28,3 +28,130 @@ body {
   height: 100%;
   width: 100%;
 }
+
+
+/*
+This loads way too many fonts.
+The reason is Typekit allows to create only one kit in free plan.
+*/
+.login-form {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container .wrapped-app {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.auth-container > footer {
+  position: relative;
+  flex: 0 0 auto;
+  border-top: 1px solid #12181f;
+  height: 37px;
+  width: 100%;
+}
+
+.auth-container > footer .foreground {
+  position: relative;
+  padding: 0 26px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: #212d38;
+}
+
+.auth-container > footer .column {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.auth-container > footer .menu {
+  width: 200px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 12px;
+  left: 13px;
+}
+
+.auth-container > footer .menu .user {
+  background-color: #000;
+  padding: 10px;
+}
+
+.auth-container > footer .menu .options {
+  padding: 16px;
+}
+
+.auth-container > footer .menu .options .logout {
+  cursor: pointer;
+}
+
+.auth-container > footer .shadow {
+  box-shadow: 0 -15px 45px 0 rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.auth-container > footer .menu-toggle {
+  width: 16px;
+  height: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.auth-container > footer .menu-toggle .line {
+  width: 100%;
+  height: 2px;
+  background-color: #66fff7;
+}
+
+.auth-container > footer .logo {
+  width: 100px;
+  display: flex;
+  height: 100%;
+}
+
+.auth-container > footer .logo svg {
+  flex: 1;
+}
+
+.auth-container > footer .application-name {
+  color: #fafbfc;
+  font-size: 16px;
+  font-family: "ibm-plex-sans";
+  font-weight: 700;
+  justify-content: center;
+  position: relative;
+  top: -2px;
+}
+
+.auth-container > footer .build-details {
+  color: #fafbfc;
+  font-size: 10px;
+  font-family: "ibm-plex-sans";
+  opacity: 0.5;
+  justify-content: flex-end;
+  margin-top: -4px;
+}

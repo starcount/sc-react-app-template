@@ -1,5 +1,6 @@
 import {useAuth0} from "@auth0/auth0-react";
 import React from "react";
+import {Redirect} from "react-router-dom";
 
 export const CallbackPage: React.FC = () => {
     const {error} = useAuth0();
@@ -19,7 +20,6 @@ export const CallbackPage: React.FC = () => {
         );
     }
 
-    return (
-        <div className="page-layout__content"/>
-    );
+    return <Redirect to="/"/>;
+
 };

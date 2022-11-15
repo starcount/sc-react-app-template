@@ -1,5 +1,5 @@
-import {AppState, Auth0Provider} from "@auth0/auth0-react";
-import React, {PropsWithChildren} from "react";
+import {AppState, Auth0Provider, useAuth0} from "@auth0/auth0-react";
+import React, {PropsWithChildren, useEffect} from "react";
 import {useHistory} from "react-router-dom";
 
 interface AuthContainerProps {

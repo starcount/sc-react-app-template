@@ -1,6 +1,7 @@
 import React from 'react';
+
 import {Logo} from "../../assets/images/Logo";
-import {User} from "../../components/navbar";
+import {Profile} from "../../components/navbar/profile";
 
 interface NavbarProps {
     displayAppName?: boolean;
@@ -12,15 +13,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                                                   appName
                                               }) => {
     return (
-        <div className="app-header">
-            <div className="app-header-content">
-                <div className="app-header-logo">
+        <div className="navbar">
+            <div className="navbar-content">
+                <div className="navbar-logo">
                     <a href="/" className="logo">
                         <Logo/>
                     </a>
                 </div>
-                <div className="app-header-menu">
-                    <User/>
+                <div className="navbar-menu">
+                    <Profile/>
                 </div>
             </div>
         </div>

@@ -2,9 +2,8 @@ import React, {useRef, useState} from 'react';
 import {useAuth0} from "@auth0/auth0-react";
 
 import {useOnClickOutside} from "../../hooks/useOnClickOutside";
-import {UserIcon} from "../../assets/images/UserIcon";
 
-export const User = () => {
+export const Profile = () => {
     const userMenuRef = useRef<HTMLDivElement>(null);
     const [isOpen, setIsOpen] = useState(false);
     const {user, logout} = useAuth0();
@@ -24,20 +23,27 @@ export const User = () => {
     };
 
     return (
-        <div className="user-widget">
-            <div className="user-details-container" ref={userMenuRef}>
-                <div className="user-menu-toggle" onClick={toggleMenu}>
-                    <UserIcon/>
+        <div className="profile-widget" ref={userMenuRef}>
+            <div className="profile-header">
+                <div className="profile-menu-toggle" onClick={toggleMenu}>
+                    <img
+                        src={user?.picture}
+                        alt="Profile"
+                        className="profile-avatar"
+                    />
                 </div>
-                <div className="user-details">
-                    <div className="user-name">{user?.name}</div>
+                <div className="profile-details">
+                    <div className="user-name">{user?.nickname}</div>
                     <div className="user-email">{user?.email}</div>
                 </div>
             </div>
 
             {isOpen && (
-                <div className="user-menu-container">
-                    <div className="menu-item" onClick={handleLogout}>Logout</div>
+                <div className="profile-menu-container">
+                    <div className="menu-items-container" onClick={handleLogout}>
+                        <a className="menu-item" onClick={handleLogout}>Logout
+                        </a>
+                    </div>
                 </div>
             )}
         </div>
