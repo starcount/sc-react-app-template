@@ -7,12 +7,12 @@ import "./styles/styles.scss";
 import {AuthContainer} from "./containers";
 
 ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <AuthContainer>
-                <App/>
-            </AuthContainer>
-        </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById("root")
+  <React.StrictMode>
+    <BrowserRouter>
+      <AuthContainer>
+        <App/>
+      </AuthContainer>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById("root")
 );

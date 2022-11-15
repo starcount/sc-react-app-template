@@ -3,7 +3,7 @@
  */
 
 // 1. Colors
-$primary-color: #000000;
+$primary-color: #19E0FF;
 $secondary-color: #ffffff;
 $tertiary-color: #000000;
 $bg-color: linear-gradient(#2f3847, #212b3a);
@@ -12,19 +12,8 @@ $bg-color: linear-gradient(#2f3847, #212b3a);
 $font-primary: cera-pro, sans-serif;
 
 :root {
-  --orange: #ff4f40;
-  --indigo: #635dff;
+  --primary-color: #19E0FF;
   --white: #fff;
-  --light-aluminium: #eaecee;
-  --aluminium: #bdc4cf;
-  --dark-aluminium: #2a2e35;
-  --black: #000000;
-  --yellow: #ebca40;
-  --mandarine: #ff7f38;
-  --pink: #ff44dd;
-  --blue: #3885ff;
-  --aqua: #3ec6eb;
-  --emerald: #1bc99f;
 
   // gradients
   --gradient-base: linear-gradient(#2f3847, #212b3a);
