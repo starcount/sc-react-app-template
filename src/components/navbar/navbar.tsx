@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {Logo} from "../../assets/images/Logo";
-import {Profile} from "../../components/navbar/profile";
+import {Logo} from "@/assets/images";
+import {Profile} from "@/components/navbar/profile";
 import {useAuth0} from "@auth0/auth0-react";
 
 interface NavbarProps {
@@ -23,11 +23,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             <Logo/>
           </a>
         </div>
-        {isAuthenticated && (
-          <div className="navbar-menu">
-            <Profile/>
-          </div>
-        )}
+        {displayAppName && (
+          <h1 className="navbar-title-text">{appName}</h1>
+        )} {isAuthenticated && (
+        <div className="navbar-menu">
+          <Profile/>
+        </div>
+      )}
       </div>
     </div>
   );
