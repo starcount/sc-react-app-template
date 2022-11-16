@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {useAuth0} from "@auth0/auth0-react";
 
-import {useOnClickOutside} from "../../hooks/useOnClickOutside";
+import {useOnClickOutside} from "@/hooks/useOnClickOutside";
 
 export const Profile = () => {
   const userMenuRef = useRef<HTMLDivElement>(null);
