@@ -21,7 +21,7 @@ export const CallbackPage: React.FC = () => {
 
   return (
     <div className="page-layout">
-      <div className="page-layout__content"/>
+      <div className="page-layout-content"/>
     </div>
 
   );

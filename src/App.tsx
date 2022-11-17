@@ -4,7 +4,7 @@ import {HomePage} from "./pages/home-page";
 import {CallbackPage} from "./pages/callback-page";
 import {NotFoundPage} from "./pages/not-found-page";
 import {UnauthorizedPage} from "./pages/unauthorized-page";
-import {ProtectedRoute} from "@/containers";
+import {ProtectedRoute} from "@/components/routes";
 
 function App() {
 

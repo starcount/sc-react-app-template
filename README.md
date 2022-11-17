@@ -9,11 +9,30 @@ starter template for new client projects.
 
 ## Technologies Used
 
-- React 16.x
-- React Router 4x
+- React 17.x
+- React Router 5x
 - Auth0
 - Sass
 - Jest (React Testing Library)
+
+## File Structure
+- `src` - contains all the source code for the project
+  - `assets ` - contains all the static assets for the project
+    - `icons` - contains all the icons for the project
+    - `images` - contains all the images for the project
+  - `components` - contains all the components for the project
+    - `atoms` - contains all the atomic components for the project e.g buttons, inputs, etc.
+    - `containers` - contains all the container components for the project e.g. auth container etc.
+    - `layout` - contains all the template components for the project e.g. page, dashboard etc.
+    - `molecules` - contains all the molecular components for the project e.g forms, navbar etc.
+    - `organisms` - contains all the organism components for the project e.g hero, footer. header etc.
+    - `routes` - contains all the route components for the project e.g. protected, public etc.
+  - `hooks` - contains all the custom hooks for the project
+  - `interfaces` - contains all the interfaces for the project
+  - `pages` - contains all the pages for the project
+  - `services` - contains all the api services for the project
+  - `styles` - contains all the styles for the project
+  - `utils` - contains all the utility functions for the project
 
 ## Setup Info
 
@@ -22,14 +41,14 @@ starter template for new client projects.
 - Set up a new Auth0 client for the app to use in the [Auth0
   dashboard](https://manage.auth0.com/dashboard/us/starcount/clients)
 - Add the following config to your environment variables inside your env file:
-    - AUTH0_DOMAIN - your Auth0 domain URL
-    - AUTH0_CLIENT_ID - your Auth0 clientID
-    - AUTH0_CALLBACK_URL - your Auth0 callback URL
-    - AUTH0_AUDIENCE - your Auth0 audience URL
+  - AUTH0_DOMAIN - your Auth0 domain URL
+  - AUTH0_CLIENT_ID - your Auth0 clientID
+  - AUTH0_CALLBACK_URL - your Auth0 callback URL
+  - AUTH0_AUDIENCE - your Auth0 audience URL
 
 ### API
 - Add the API url to your environment variables inside your env file:
-    - API_URL - your API url
+  - API_URL - your API url
 
 ### React
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

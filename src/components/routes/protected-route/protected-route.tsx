@@ -2,7 +2,7 @@ import React, {ComponentType} from "react";
 import {withAuthenticationRequired} from "@auth0/auth0-react";
 import {Route, RouteProps} from "react-router-dom";
 
-import {Spinner} from "@/components/Spinner";
+import {Spinner} from "@/components/atoms/spinner";
 
 interface ProtectedRouteProps extends RouteProps {
   component: ComponentType;
