@@ -1,2 +1,2 @@
-export {Navbar} from './navbar';
-export {Profile} from './profile'
+export { Navbar } from "./navbar";
+export { Profile } from "./profile";

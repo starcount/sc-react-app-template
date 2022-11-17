@@ -1,12 +1,12 @@
-import React, {useRef, useState} from 'react';
-import {useAuth0} from "@auth0/auth0-react";
+import React, { useRef, useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
-import {useOnClickOutside} from "@/hooks/useOnClickOutside";
+import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 
 export const Profile = () => {
   const userMenuRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const {user, logout} = useAuth0();
+  const { user, logout } = useAuth0();
 
   useOnClickOutside(userMenuRef, () => {
     setIsOpen(false);
@@ -14,7 +14,7 @@ export const Profile = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-  }
+  };
 
   const handleLogout = () => {
     logout({
@@ -26,11 +26,7 @@ export const Profile = () => {
     <div className="profile-widget" ref={userMenuRef}>
       <div className="profile-header">
         <div className="profile-menu-toggle" onClick={toggleMenu}>
-          <img
-            src={user?.picture}
-            alt="Profile"
-            className="profile-avatar"
-          />
+          <img src={user?.picture} alt="Profile" className="profile-avatar" />
         </div>
         <div className="profile-details">
           <div className="user-name">{user?.nickname}</div>

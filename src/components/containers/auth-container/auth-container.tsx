@@ -1,14 +1,14 @@
-import {AppState, Auth0Provider} from "@auth0/auth0-react";
-import React, {PropsWithChildren} from "react";
-import {useHistory} from "react-router-dom";
+import { AppState, Auth0Provider } from "@auth0/auth0-react";
+import React, { PropsWithChildren } from "react";
+import { useHistory } from "react-router-dom";
 
 interface AuthContainerProps {
   children: React.ReactNode;
 }
 
 export const AuthContainer = ({
-                                children,
-                              }: PropsWithChildren<AuthContainerProps>): JSX.Element | null => {
+  children,
+}: PropsWithChildren<AuthContainerProps>): JSX.Element | null => {
   const history = useHistory();
 
   const domain = process.env.REACT_APP_AUTH0_DOMAIN;

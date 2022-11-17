@@ -1,8 +1,8 @@
-import {useAuth0} from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 
 export const CallbackPage: React.FC = () => {
-  const {error} = useAuth0();
+  const { error } = useAuth0();
 
   if (error) {
     return (
@@ -21,9 +21,7 @@ export const CallbackPage: React.FC = () => {
 
   return (
     <div className="page-layout">
-      <div className="page-layout-content"/>
+      <div className="page-layout-content" />
     </div>
-
   );
-
 };

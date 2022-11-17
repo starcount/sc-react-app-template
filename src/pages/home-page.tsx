@@ -1,10 +1,10 @@
 import React from "react";
-import {useAuth0} from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 
-import {PageLayout} from "@/components";
+import { PageLayout } from "@/components";
 
 export const HomePage: React.FC = () => {
-  const {user} = useAuth0();
+  const { user } = useAuth0();
 
   if (!user) {
     return null;
@@ -12,8 +12,7 @@ export const HomePage: React.FC = () => {
 
   return (
     <PageLayout>
-      <div className="page-layout-content">
-      </div>
+      <div className="page-layout-content"></div>
     </PageLayout>
   );
-}
+};

@@ -1,13 +1,13 @@
-import axios, {AxiosError, AxiosRequestConfig, AxiosResponse} from "axios";
-import {ApiResponse} from "../interfaces/api-response";
-import {AppError} from "../interfaces/app-error";
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+import { ApiResponse } from "../interfaces/api-response";
+import { AppError } from "../interfaces/app-error";
 
 export const callExternalApi = async (options: {
   config: AxiosRequestConfig;
 }): Promise<ApiResponse> => {
   try {
     const response: AxiosResponse = await axios(options.config);
-    const {data} = response;
+    const { data } = response;
 
     return {
       data,
@@ -17,7 +17,7 @@ export const callExternalApi = async (options: {
     if (axios.isAxiosError(error)) {
       const axiosError = error as AxiosError;
 
-      const {response} = axiosError;
+      const { response } = axiosError;
 
       let message = "http request failed";
 
