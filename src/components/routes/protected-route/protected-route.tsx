@@ -3,6 +3,7 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { Route, RouteProps } from "react-router-dom";
 
 import { Spinner } from "@/components/atoms/spinner";
+import { Grid } from "@mui/material";
 
 interface ProtectedRouteProps extends RouteProps {
   component: ComponentType;
@@ -15,9 +16,15 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   <Route
     component={withAuthenticationRequired(component, {
       onRedirecting: () => (
-        <div className="page-layout">
+        <Grid
+          container
+          xs={12}
+          justifyContent="center"
+          alignItems="center"
+          style={{ height: "100%" }}
+        >
           <Spinner />
-        </div>
+        </Grid>
       ),
     })}
     {...args}

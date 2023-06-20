@@ -7,13 +7,16 @@ import App from "./App";
 import "./styles/styles.scss";
 
 import { AuthContainer } from "@/components/containers";
+import { ThemeContainer } from "@/components/containers/theme-container";
 
 ReactDOM.render(
   <React.StrictMode>
     <StyledEngineProvider injectFirst>
       <BrowserRouter>
         <AuthContainer>
-          <App />
+          <ThemeContainer>
+            <App />
+          </ThemeContainer>
         </AuthContainer>
       </BrowserRouter>
     </StyledEngineProvider>

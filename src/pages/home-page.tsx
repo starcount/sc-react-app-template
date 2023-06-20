@@ -12,7 +12,7 @@ export const HomePage: React.FC = () => {
 
   return (
     <PageLayout>
-      <div className="page-layout-content"></div>
+      <h1>Home Page</h1>
     </PageLayout>
   );
 };
